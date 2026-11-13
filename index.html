@@ -36,7 +36,7 @@
   "name": "Junior Zoschke",
   "url": "https://juniorzoschke.com/",
   "image": "https://juniorzoschke.com/junior-zoschke.jpg",
-  "jobTitle": "Business owner and acquirer",
+  "jobTitle": "Business owner",
   "description": "Buying and growing established UK businesses, keeping the same people and the same values.",
   "telephone": "+447868780098",
   "address": {
@@ -82,7 +82,23 @@ section{padding:clamp(3rem,7vw,5.5rem) 0}
 .top nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
 .top nav a{color:#dbe7ee;text-decoration:none;font-size:.95rem}
 .top nav a:hover{color:#fff;text-decoration:underline}
-@media (max-width:700px){.top nav{display:none}}
+ .nav-toggle{display:none;align-items:center;justify-content:center;gap:.45rem;min-height:48px;padding:.45rem .9rem;margin:0;border:2px solid rgba(255,255,255,.75);border-radius:999px;background:transparent;color:#fff;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer}
+.nav-toggle:hover{background:rgba(255,255,255,.12)}
+.nav-toggle:focus-visible{outline:3px solid #f2b705;outline-offset:3px}
+.nav-toggle-bar{display:block;width:1.05rem;height:2px;background:#fff;box-shadow:0 .28rem 0 #fff,0 -.28rem 0 #fff}
+@media (max-width:959px){
+  .top{position:relative}
+  .nav-toggle{display:inline-flex}
+  .top nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);border-top:1px solid rgba(255,255,255,.15);z-index:8;box-shadow:0 12px 24px rgba(0,0,0,.2)}
+  .top nav.is-open{display:block}
+  .top nav ul{flex-direction:column;gap:0;padding:.4rem 1.25rem 1rem}
+  .top nav a{display:flex;align-items:center;min-height:48px;padding:.35rem 0}
+}
+@media (min-width:960px){
+  .top nav{display:block!important}
+  .top nav ul{flex-wrap:wrap;justify-content:flex-end}
+}
+
 
 /* Hero */
 .hero{background:linear-gradient(135deg,#0f2a3d 0%,#0e4a58 60%,#0d6b6e 100%);color:#fff;padding:clamp(3rem,8vw,6rem) 0}
@@ -170,12 +186,15 @@ footer a{color:#dbe7ee}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/">Junior Zoschke</a>
-    <nav aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span class="nav-toggle-bar" aria-hidden="true"></span>Menu</button>
+    <nav id="site-nav" aria-label="Main">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#criteria">What I look for</a></li>
+        <li><a href="#letter">Received my letter?</a></li>
         <li><a href="#promise">My promise</a></li>
         <li><a href="#process">How it works</a></li>
+        <li><a href="#purchase">How I set out a purchase</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -189,7 +208,7 @@ footer a{color:#dbe7ee}
         <p class="eyebrow eyebrow-light">Private business buyer · <span class="nowrap">Surrey, UK</span></p>
         <h1 id="hero-title">Junior Zoschke</h1>
         <p class="tagline"><span class="tl-1">Buying and growing established UK businesses.</span> <span class="tl-2">Your team stays, your legacy grows.</span></p>
-        <p class="lede">I buy businesses with a management team in place and keep them running, with the same people and the same values.</p>
+        <p class="lede">I'm a UK business owner with shareholdings in two companies. I buy businesses that already have a management team, and I keep them running with the same people and the same values.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#contact">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -225,10 +244,33 @@ footer a{color:#dbe7ee}
       </div>
       <ul class="facts" aria-label="Key facts">
         <li><strong>Based in</strong><span>Surrey, UK</span></li>
-        <li><strong>Background</strong><span>20+ years helping SMEs grow</span></li>
+        <li><strong>Background</strong><span>20+ years helping smaller UK businesses grow</span></li>
         <li><strong>Owners helped</strong><span>300+ business owners</span></li>
-        <li><strong>Approach</strong><span>Private buyer, not a broker or a chain</span></li>
+        <li><strong>Approach</strong><span>Private buyer, buying for myself</span></li>
       </ul>
+    </div>
+  </section>
+
+
+  <section id="letter" aria-labelledby="letter-title">
+    <div class="wrap">
+      <p class="eyebrow">If you received a letter</p>
+      <h2 id="letter-title">Received my letter?</h2>
+      <p class="intro">If I wrote to you, you can email, call or text me using the details on this page. Here are a few short answers to start with.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Will my staff be told?</h3>
+          <p>You decide when and how your team hears about it, and we plan that together.</p>
+        </div>
+        <div class="card">
+          <h3>Is this confidential?</h3>
+          <p>I treat everything you share as confidential. I'm happy to sign an NDA before we talk in detail.</p>
+        </div>
+        <div class="card">
+          <h3>Do I have to stay on after a sale?</h3>
+          <p>We agree a handover period together that suits you.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -241,7 +283,7 @@ footer a{color:#dbe7ee}
         <div class="card"><h3>Established in the UK</h3><p>A proven business with a track record, customers and a good name.</p></div>
         <div class="card"><h3>Around £1m+ turnover</h3><p>Annual revenue of roughly £1 million or more.</p></div>
         <div class="card"><h3>Around £200k+ profit</h3><p>Net profit of roughly £200,000 or more a year.</p></div>
-        <div class="card"><h3>A team in place</h3><p>A management team, so the business doesn't rely on the owner day to day.</p></div>
+        <div class="card"><h3>A team in place</h3><p>A management team that already runs the business day to day.</p></div>
       </div>
     </div>
   </section>
@@ -251,10 +293,10 @@ footer a{color:#dbe7ee}
       <p class="eyebrow">My promise to sellers</p>
       <h2 id="promise-title">What you can expect from me</h2>
       <ul>
-        <li><div><strong>Complete confidentiality</strong><span>Your team, customers and competitors won't hear about it from me. I'm happy to sign an NDA before we talk in detail.</span></div></li>
-        <li><div><strong>Respect for your staff and legacy</strong><span>Your staff and customers come first. I keep the name, the team and the reputation you've built.</span></div></li>
-        <li><div><strong>Long-term ownership, not a quick flip</strong><span>I'm buying to keep and grow the business, not to strip it or sell it on.</span></div></li>
-        <li><div><strong>A fair, clear process</strong><span>No long, drawn-out negotiation, and costs kept down by keeping things simple.</span></div></li>
+        <li><div><strong>Complete confidentiality</strong><span>I treat everything you share as confidential. I'm happy to sign an NDA before we talk in detail.</span></div></li>
+        <li><div><strong>Respect for your staff and legacy</strong><span>Your staff and customers come first. I buy because the team is already in place, and I want the name and reputation you've built to carry on.</span></div></li>
+        <li><div><strong>Long-term ownership</strong><span>I buy to keep and grow the business.</span></div></li>
+        <li><div><strong>A fair, clear process</strong><span>We keep talks simple, and that helps keep costs down.</span></div></li>
         <li><div><strong>Clear answers</strong><span>I'll keep you updated and give you an honest answer, fast.</span></div></li>
       </ul>
     </div>
@@ -265,25 +307,25 @@ footer a{color:#dbe7ee}
       <p class="eyebrow">How it works</p>
       <h2 id="process-title">Four simple steps</h2>
       <ol class="grid four steps">
-        <li class="card"><h3>A confidential chat</h3><p>An informal, no-obligation conversation by phone or in person about you and your plans.</p></li>
-        <li class="card"><h3>Understanding the business</h3><p>I learn how the business works and what matters to you, discreetly and at your pace.</p></li>
-        <li class="card"><h3>Offer and agreement</h3><p>A clear offer and a straightforward agreement, with no surprises along the way.</p></li>
-        <li class="card"><h3>A careful handover</h3><p>A handover period agreed between us, so staff, customers and suppliers feel no disruption.</p></li>
+        <li class="card"><h3>A confidential chat</h3><p>An informal conversation, by phone or in person, about you and your plans.</p></li>
+        <li class="card"><h3>Understanding the business</h3><p>I learn how the business works and what matters to you, quietly, and at your pace.</p></li>
+        <li class="card"><h3>Offer and agreement</h3><p>A clear offer and a plain-English agreement, set out in writing.</p></li>
+        <li class="card"><h3>A careful handover</h3><p>A handover period we agree together, so staff, customers and suppliers can keep working as usual.</p></li>
       </ol>
     </div>
   </section>
 
   <section id="purchase" class="soft" aria-labelledby="purchase-title">
     <div class="wrap">
-      <h2 id="purchase-title">How I structure a purchase</h2>
-      <p class="intro">Every deal is set out in writing, in plain English, before you commit to anything. That includes what you're paid on completion and what (if anything) is paid later. I'll show you how the business can support the deal, so you can see it works for your team as well as for you. I encourage you to take your own legal and financial advice, and I'm happy to talk with your advisers directly. If a deal isn't right for you, I'll tell you quickly and honestly.</p>
+      <h2 id="purchase-title">How I set out a purchase</h2>
+      <p class="intro">Every deal is set out in writing, in plain English, before you commit to anything. That includes what you're paid when the sale goes through and what (if anything) is paid later. I'll show you how the business can support the deal, so you can see it works for your team as well as for you. I encourage you to take your own legal and financial advice, and I'm happy to talk with your advisers directly. I'll always give you an honest answer, fast.</p>
     </div>
   </section>
 
   <section id="contact" class="contact" aria-labelledby="contact-title">
     <div class="wrap">
       <h2 id="contact-title">Let's have a confidential chat</h2>
-      <p>If you're starting to think about what comes next for your business, I'd be glad to hear from you. It's never too early to start a conversation.</p>
+      <p>If you're starting to think about what comes next for your business, I'd be glad to hear from you. We can talk whenever you're ready.</p>
       <ul class="contact-list">
         <li class="mail-card" id="email-box" data-u="&#104;&#101;&#108;&#108;&#111;" data-d="&#106;uniorzoschke&#46;com">
           <small>Email</small>
@@ -303,7 +345,7 @@ footer a{color:#dbe7ee}
 <footer>
   <div class="wrap">
     <p>&copy; 2026 Junior Zoschke, Surrey, UK</p>
-    <p>Privacy: this site uses no cookies and no tracking. Anything you send me is kept confidential.</p>
+    <p>Privacy: This site uses no cookies and no tracking tools. Anything you send me is kept confidential.</p>
   </div>
 </footer>
 <script>
@@ -316,6 +358,24 @@ footer a{color:#dbe7ee}
   function done(ok){btn.textContent=ok?'Copied':'Copy';st.textContent=ok?'Email address copied':'Please select and copy the address';clearTimeout(timer);timer=setTimeout(function(){btn.textContent='Copy';st.textContent='';},2000);}
   function fallback(){var r=document.createRange(),sel=window.getSelection(),ok=false;r.selectNodeContents(l);sel.removeAllRanges();sel.addRange(r);try{ok=document.execCommand('copy');}catch(x){}done(ok);}
   btn.addEventListener('click',function(){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(e).then(function(){done(true);},fallback);}else{fallback();}});
+})();
+</script>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav-toggle');
+  var nav=document.getElementById('site-nav');
+  if(!btn||!nav)return;
+  function setOpen(open){
+    btn.setAttribute('aria-expanded', open?'true':'false');
+    btn.setAttribute('aria-label', open?'Close menu':'Open menu');
+    var label=btn.childNodes[btn.childNodes.length-1];
+    if(label && label.nodeType===3) label.nodeValue=open?' Close':' Menu';
+    nav.classList.toggle('is-open', open);
+  }
+  btn.addEventListener('click', function(){ setOpen(btn.getAttribute('aria-expanded')!=='true'); });
+  nav.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
 })();
 </script>
 </body>
